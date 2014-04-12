@@ -1,0 +1,28 @@
+<head>
+  <title>Simpleボード</title>
+</head>
+
+<body>
+  {{> contents}}
+</body>
+
+<template name="contents">
+<div id="head">
+  <div id="h_title">Meteorを使ったシンプルなチャットのデモです。</div>
+  <div id="m_title">{{maxrec}}件まで表示されます。背景色は<span><div id="colorbox" style="{{color}}"></div></span>です。</div>
+  <div id="control">
+    <input id="postname" type="text" placeholder="enter your name">
+    <input id="postmes" type="text" placeholder="enter message">
+  </div>
+</div>
+<div id="wrap">
+<div id="messages">
+{{#each messages}}
+  <div class="rec_wrap" id="wrap{{_id}}" style="{{style}}">
+  	<div class="rec_date" id="date{{_id}}">{{datetime}}</div>
+  	<div class="rec_name" id="name{{_id}}">{{name}}</div>
+  	<div class="rec_mes" id="mes{{_id}}">{{message}}</div>
+  </div>
+{{/each}}
+</div></div>
+</template>
